@@ -34,8 +34,8 @@
     function PlaySound(row, column){
       // Set the sound according to the clicked button
       activeSound[row].src = soundLibraryArray[row][column];
-
-      // TODO deactivate loop on second click
+      // TODO Visual Effect on Button
+      // TODO deactivate loop on second click, 
       if(document.getElementById("loop"+[row]).checked)
       {
         activeSound[row].loop = true;

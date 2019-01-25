@@ -1,4 +1,4 @@
-
+    
     var tomArray = new Array(5);
     var hihatArray= new Array(5);
     var kickArray= new Array(5);
@@ -34,7 +34,7 @@
     function PlaySound(row, column){
       // Set the sound according to the clicked button
       activeSound[row].src = soundLibraryArray[row][column];
-      // TODO Visual Effect on Button
+     
       // TODO deactivate loop on second click, 
       if(document.getElementById("loop"+[row]).checked)
       {
@@ -49,3 +49,10 @@
       activeSound[row].play();
 
     }
+/* TODO 
+- Visual Effect on Button / Button Image 
+- Loop Button Visuals
+- Sync Audio bzw Metronom mitlaufen und Sounds auf 0 anfangen lassen
+- Div dynamisch erstellen 
+- Volume & Geschwindigkeit Button
+*/

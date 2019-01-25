@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+
+ <head>
+<meta charset="utf-8"/>
+
+ <link rel="stylesheet" href="style.css" type="text/css" />
+ <div class="topnav" id="myTopnav">
+   <a href="main.htm">Home</a>
+   <a href="soundboard.htm" class="active"> Soundboard</a>
+   <a href="about.htm">About</a>
+ </div>
+ </head>
+ <h1>Willkommen</h1>
+ <body>
+  <div id= "mainContainer">
+    <p class ="pWhite"><input type="checkbox" id="loop0" value="Loop"> Loop </p>
+    <p class ="pWhite"><input type="checkbox" id="loop1" value="Loop"> Loop </p>
+    <p class ="pWhite"><input type="checkbox" id="loop2" value="Loop"> Loop </p>
+    <p class ="pWhite"><input type="checkbox" id="loop3" value="Loop"> Loop </p>
+    <div>
+      <div class="button0" id ="button00"><a onclick="PlaySound(0,0)">Tom</a></div>
+      <div class="button1" id ="button10"><a onclick="PlaySound(1,0)">Chords</a></div>
+      <div class="button2" id ="button20"><a onclick="PlaySound(2,0)">Kick</a></div>
+      <div class="button3" id ="button30"><a onclick="PlaySound(3,0)">Snare</a></div>
+    </div>
+    </br>
+    <div>
+      <div class="button0" id ="button01"><a onclick="PlaySound(0,1)">Tom</a></div>
+      <div class="button1" id ="button11"><a onclick="PlaySound(1,1)">Chords</a></div>
+      <div class="button2" id ="button21"><a onclick="PlaySound(2,1)">Kick</a></div>
+      <div class="button3" id ="button31"><a onclick="PlaySound(3,1)">Snare</a></div>
+    </div>
+    </br>
+    <div>
+      <div class="button0" id ="button02"><a onclick="PlaySound(0,2)">Tom</a></div>
+      <div class="button1" id ="button12"><a onclick="PlaySound(1,2)">Chords</a></div>
+      <div class="button2" id ="button22"><a onclick="PlaySound(2,2)">Kick</a></div>
+      <div class="button3" id ="button32"><a onclick="PlaySound(3,2)">Snare</a></div>
+    </div>
+    </br>
+  </div>
+</body>
+</html>
+
+<script>
+    var tomArray = new Array(5);
+    var chordsArray= new Array(5);
+    var kickArray= new Array(5);
+    var snareArray= new Array(5);
+    var soundLibraryArray = [tomArray, chordsArray, kickArray, snareArray];
+
+    SetUpArrays();
+    function SetUpArrays(){
+      var i;
+      for (i = 0; i<soundLibraryArray.length; i++){
+       soundLibraryArray[i].size = 5;
+      }
+      for (i = 0; i<tomArray.length; i++){
+       tomArray[i] = "audio/tom/tom"+[i]+".wav";
+      }
+      for (i = 0; i<chordsArray.length; i++){
+       chordsArray[i] = "audio/chords/chords"+[i]+".wav";
+      }
+      for (i = 0; i<kickArray.length; i++){
+       kickArray[i] = "audio/kick/kick"+[i]+".wav";
+      }
+      for (i = 0; i<snareArray.length; i++){
+       snareArray[i] = "audio/snare/snare"+[i]+".wav";
+      }
+    }
+    // Variabel dynamisch erstellen?
+    var sound0 = document.createElement('audio');
+    var sound1 = document.createElement('audio');
+    var sound2 = document.createElement('audio');
+    var sound3 = document.createElement('audio');
+    var activeSound = [sound0,sound1,sound2,sound3];
+
+    function PlaySound(row, column){
+      // Set the sound according to the clicked button
+      activeSound[row].src = soundLibraryArray[row][column];
+
+      // TODO deactivate loop on second click
+      if(document.getElementById("loop"+[row]).checked)
+      {
+        activeSound[row].loop = true;
+      }
+      else{
+        activeSound[row].loop = false;
+      }
+      // TODO only play when the other sounds are finished ?
+      activeSound[row].pause();
+      activeSound[row].currentTime = 0;
+      activeSound[row].play();
+
+    }
+</script>

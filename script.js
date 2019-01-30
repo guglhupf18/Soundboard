@@ -1,4 +1,5 @@
 
+
     var tomArray = new Array(5);
     var hihatArray= new Array(5);
     var kickArray= new Array(5);
@@ -34,7 +35,7 @@
       // Set the sound according to the clicked button
       activeSound[row].src = soundLibraryArray[row][column];
 
-      // TODO deactivate loop on second click
+      // Loop aktualisieren
       if(document.getElementById("loop"+[row]).checked)
       {
         activeSound[row].loop = true;
@@ -56,7 +57,6 @@
           activeSound[row].pause();
           activeSound[row].classList.remove("button"+[row]);
           activeSound[row].classList.add("buttonInactive");
-          console.log("hu2hu")
         }
         else{
           oldButton[row] = activeButton[row];
@@ -75,5 +75,7 @@
       var i;
       for(i = 0; i<activeSound.length;i++){
         activeSound[i].pause();
+        activeButton[i].classList.remove("button"+[i]);
+        activeButton[i].classList.add("buttonInactive");
       }
     }

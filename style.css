@@ -16,8 +16,9 @@ a:active {
 .pWhite{
   color: white;
   display: inline-block;
-  padding: 10px 10px;
-
+  padding:0px 25px;
+  margin-top: 0;
+  margin-right: 5px;
 }
 #myDIV {
   position: absolute;
@@ -26,13 +27,31 @@ a:active {
   background-color: lightblue;
   border: 1px solid black;
 }
+.mainContainer{
+  height: 500px;
+  width: 500px;
+  background-color: grey;
+  padding: 20px 30px;
+  border-radius: 10px;
 
-.button0 {
-  background-color: #4CAF50; /* Green */
+}
+.buttonInactive {
+  background-color: #BEC0C3;
   border: none;
   color: black;
   border-radius: 25px;
-  padding: 15px 22px;
+  padding: 30px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.button0 {
+  background-color: #27AE34;
+  border: none;
+  color: black;
+  border-radius: 25px;
+  padding: 30px 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -40,44 +59,44 @@ a:active {
 
 }
 .button1 {
-  background-color: #0000FF; /* Green */
+  background-color: #00E5EE;
   border: none;
   border-radius: 25px;
   color: black;
-  padding: 15px 22px;
+  padding: 30px 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
 }
 .button2 {
-  background-color: #FF0000; /* Green */
+  background-color: #B70431;
   border: none;
   border-radius: 25px;
   color: black;
-  padding: 15px 22px;
+  padding: 30px 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
 }
 .button3 {
-  background-color: #58D68D; /* Green */
+  background-color: #58D68D;
   border: none;
   border-radius: 25px;
   color: black;
-  padding: 15px 22px;
+  padding: 30px 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
 }
 .button4 {
-  background-color: #F7DC9F; /* Green */
+  background-color: #F7DC9F;
   border: none;
   border-radius: 25px;
   color: black;
-  padding: 15px 22px;
+  padding: 30px 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -155,9 +174,7 @@ div#submitForm input {
 }
 
 @media screen and (min-width: 800px) {
-  body {
-    background-color: lavender;
-  }
+  .button {display: none}
 }
 
 @media screen and (max-width: 600px) {

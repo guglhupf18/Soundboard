@@ -42,26 +42,38 @@
       else{
         activeSound[row].loop = false;
       }
-      // TODO only play when the other sounds are finished to sync?
-      activeSound[row].pause();
-      activeSound[row].currentTime = 0;
-      activeSound[row].play();
+      // referenz zum aktuellen button
+      var button = document.getElementById("button"+[row]+[column]);
       // Highlight button
-
         if(activeButton[row] == null){
-           var button = document.getElementById("button"+[row]+[column]);
            activeButton[row] = button;
            activeButton[row].classList.remove("buttonInactive");
            activeButton[row].classList.add("button"+[row]);
+           activeSound[row].currentTime = 0;
+           activeSound[row].play();
+        }
+        else if(activeButton[row] == button){
+          activeSound[row].pause();
+          activeSound[row].classList.remove("button"+[row]);
+          activeSound[row].classList.add("buttonInactive");
+          console.log("hu2hu")
         }
         else{
           oldButton[row] = activeButton[row];
           oldButton[row].classList.remove("button"+[row]);
           oldButton[row].classList.add("buttonInactive");
-          var button = document.getElementById("button"+[row]+[column]);
+
           activeButton[row] = button;
           activeButton[row].classList.remove("buttonInactive");
           activeButton[row].classList.add("button"+[row]);
-          console.log("huhu")
+
+          activeSound[row].currentTime = 0;
+          activeSound[row].play();
         }
+      }
+    function PauseSound(){
+      var i;
+      for(i = 0; i<activeSound.length;i++){
+        activeSound[i].pause();
+      }
     }

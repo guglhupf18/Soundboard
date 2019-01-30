@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+ <head>
+<meta charset="utf-8"/>
+
+ <link rel="stylesheet" href="style.css" type="text/css" />
+ <script src="script.js"></script>
+ <div class="topnav" id="myTopnav">
+   <a href="main.htm">Home</a>
+   <a href="soundboard.htm" class="active"> Soundboard</a>
+ </div>
+ </head>
+ <h1>Willkommen</h1>
+ <body>
+  <div id= "mainContainer"class ="mainContainer">
+    <div id ="loopContainer" class ="loopContainer">
+    <p class ="pWhite"><input type="checkbox" id="loop0" value="Loop"> Loop </p>
+    <p class ="pWhite"><input type="checkbox" id="loop1" value="Loop"> Loop </p>
+    <p class ="pWhite"><input type="checkbox" id="loop2" value="Loop"> Loop </p>
+    <p class ="pWhite"><input type="checkbox" id="loop3" value="Loop"> Loop </p>
+    </div>
+    <div>
+      <div class="buttonInactive" id ="button00"><a onclick="PlaySound(0,0)">Tom</a></div>
+      <div class="buttonInactive" id ="button10"><a onclick="PlaySound(1,0)">Hihat</a></div>
+      <div class="buttonInactive" id ="button20"><a onclick="PlaySound(2,0)">Kick</a></div>
+      <div class="buttonInactive" id ="button30"><a onclick="PlaySound(3,0)">Snare</a></div>
+    </div>
+    </br>
+    <div>
+      <div class="buttonInactive" id ="button01"><a onclick="PlaySound(0,1)">Tom</a></div>
+      <div class="buttonInactive" id ="button11"><a onclick="PlaySound(1,1)">Hihat</a></div>
+      <div class="buttonInactive" id ="button21"><a onclick="PlaySound(2,1)">Kick</a></div>
+      <div class="buttonInactive" id ="button31"><a onclick="PlaySound(3,1)">Snare</a></div>
+    </div>
+    </br>
+    <div>
+      <div class="buttonInactive" id ="button02"><a onclick="PlaySound(0,2)">Tom</a></div>
+      <div class="buttonInactive" id ="button12"><a onclick="PlaySound(1,2)">Hihat</a></div>
+      <div class="buttonInactive" id ="button22"><a onclick="PlaySound(2,2)">Kick</a></div>
+      <div class="buttonInactive" id ="button32"><a onclick="PlaySound(3,2)">Snare</a></div>
+    </div>
+    </br>
+    <div>
+      <div class="buttonInactive" id ="button03"><a onclick="PlaySound(0,3)">Tom</a></div>
+      <div class="buttonInactive" id ="button13"><a onclick="PlaySound(1,3)">Hihat</a></div>
+      <div class="buttonInactive" id ="button23"><a onclick="PlaySound(2,3)">Kick</a></div>
+      <div class="buttonInactive" id ="button33"><a onclick="PlaySound(3,3)">Snare</a></div>
+    </div>
+    </br>
+    <div>
+        <div class="buttonInactive" id ="button04"><a onclick="PlaySound(0,4)">Tom</a></div>
+        <div class="buttonInactive" id ="button14"><a onclick="PlaySound(1,4)">Hihat</a></div>
+        <div class="buttonInactive" id ="button24"><a onclick="PlaySound(2,4)">Kick</a></div>
+        <div class="buttonInactive" id ="button34"><a onclick="PlaySound(3,4)">Snare</a></div>
+      </div>
+      </br>
+  </div>
+</body>
+</html>
